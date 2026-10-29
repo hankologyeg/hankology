@@ -117,6 +117,13 @@ section{scroll-margin-top:90px}
 .phone{display:flex;align-items:center;justify-content:space-between;gap:10px;border:2.5px solid var(--ink);border-radius:12px;padding:8px 8px 8px 14px;margin-bottom:10px;background:var(--cream)}
 .phone span{font-family:var(--display);font-weight:900;font-size:22px;font-variant-numeric:tabular-nums;user-select:all}
 .copy{font-family:var(--display);font-weight:900;text-transform:uppercase;font-size:12px;letter-spacing:.05em;background:var(--orange);color:var(--ink);border:2px solid var(--ink);border-radius:8px;padding:7px 10px;cursor:pointer}
+.badge{display:inline-block;font-family:var(--display);font-weight:900;font-size:11px;letter-spacing:.06em;text-transform:uppercase;border:2px solid var(--ink);border-radius:999px;padding:2px 8px;vertical-align:middle;margin-left:6px;position:relative;top:-2px}
+.badge.new{background:var(--orange);color:var(--ink)}
+.badge.sig{background:var(--ink);color:var(--paper)}
+.dbl{margin:0 0 6px;font-weight:700;text-transform:uppercase;font-size:13px;letter-spacing:.04em;background:var(--cream);border:2px dashed var(--orange);border-radius:10px;padding:8px 12px}
+.dbl b{color:var(--orange);font-weight:900}
+.pick{margin:-6px 0 12px;font-size:14px;color:var(--muted)}
+.btn.wa{width:100%;justify-content:center;margin-top:6px;background:var(--paper)}
 footer{text-align:center;padding-block:60px 40px}
 footer .t{font-family:var(--display);font-weight:900;letter-spacing:.35em;text-transform:uppercase;font-size:clamp(14px,2vw,20px)}
 footer .t span{color:var(--orange)}
@@ -134,7 +141,7 @@ footer small{display:block;color:var(--muted);margin-top:24px}
 <div class="dots" style="right:0;top:70px"></div>
 <section class="hero">
   <div class="hcopy">
-    <span class="tab" style="font-size:16px">Smash burgers · Fried chicken</span>
+    <span class="tab" style="font-size:16px">Smash burgers &amp; more</span>
     <h1 style="margin-top:24px">A blend you<br><span>can't label.</span></h1>
     <p>Smashed, stacked and dripping. Order online for delivery or come by our branches in Sheikh Zayed and Nasr City.</p>
     <div class="ctas"><a class="btn" href="https://hankology.instakit.app/web" target="_blank" rel="noopener">Order online</a><a class="btn ghost" href="#menu">See the menu</a></div>
@@ -152,10 +159,13 @@ footer small{display:block;color:var(--muted);margin-top:24px}
     <button class="chip" id="f-myo" data-f="myo" aria-pressed="false">Make your own</button>
     <button class="chip" id="f-sides" data-f="sides" aria-pressed="false">Appetizers</button>
     <button class="chip" id="f-more" data-f="more" aria-pressed="false">More &amp; more</button>
+    <button class="chip" id="f-new" data-f="new" aria-pressed="false">New</button>
+    <button class="chip" id="f-dessert" data-f="dessert" aria-pressed="false">Desserts</button>
   </div>
 
   <div class="menu">
     <div class="board" data-cat="beef"><span class="tab">Smash burgers</span>
+      <p class="dbl">All our smash burgers are <b>double</b> 🍔🍔</p>
       <div class="item"><h3>The OG</h3><span class="price">199</span><p>Cheddar, Hank dressing, OTP</p></div>
       <div class="item"><h3>BBQ Melt</h3><span class="price">209</span><p>Smoky BBQ, caramelized onion, mozzarella, OTP</p></div>
       <div class="item"><h3>Danger Zone</h3><span class="price">219</span><p>Buffalo, emmental, fresh &amp; glazed jalapeño, OTP</p></div>
@@ -201,20 +211,32 @@ footer small{display:block;color:var(--muted);margin-top:24px}
         <div class="item"><h3>Smash patty</h3><span class="price">80</span></div></div>
     </div>
   </div>
+  <div class="menu" style="margin-top:100px">
+  <div class="board" data-cat="new"><span class="tab">New on the menu</span>
+    <div class="item"><h3>Shawarma Sandwich <span class="badge new">New</span></h3><span class="price">189</span><p>Layers of beef, onions, sumac &amp; special tahini dressing</p></div>
+  </div>
+  <div class="board" data-cat="dessert"><span class="tab">Desserts</span>
+    <div class="item"><h3>Iced Saklans <span class="badge sig">Our signature</span></h3><span class="price">120</span><p>Saklans flavor ice cream inside a hot bun</p></div>
+    <p class="note" style="margin:10px 0 0;color:var(--ink);font-weight:700">⚠️ Not available for delivery · Dine-in &amp; pick-up only</p>
+  </div>
+  </div>
 </section>
 
 <section id="boxes">
   <div class="sec-head"><h2>Share boxes</h2><p>Big boxes for movie nights, gatherings and the whole squad. Made for sharing.</p></div>
   <div class="boxes">
-    <div class="board box"><span class="tab">Box 01</span><h3>Smash burger box</h3>
+    <div class="board box"><span class="tab">Box 01</span><h3>Fried chicken box</h3>
+      <p class="pick">Pick any 4 fried chicken sandwiches from the menu.</p>
+      <ul><li><b>4</b>Fried chicken sandwiches</li><li><b>4</b>Fries</li><li><b>4</b>Mozzarella sticks</li><li><b>4</b>Onion rings</li><li><b>4</b>V Cola</li></ul>
+      <div class="foot"><small>After discount</small><span class="big">1,099 <span>EGP</span></span></div></div>
+    <div class="board box"><span class="tab">Box 02</span><h3>The mix box</h3>
+      <p class="pick">Pick any 2 smash burgers and 2 fried chicken sandwiches from the menu.</p>
+      <ul><li><b>2</b>Smash burgers</li><li><b>2</b>Fried chicken sandwiches</li><li><b>4</b>Fries</li><li><b>4</b>Mozzarella sticks</li><li><b>4</b>Onion rings</li><li><b>4</b>V Cola</li></ul>
+      <div class="foot"><small>After discount</small><span class="big">1,149 <span>EGP</span></span></div></div>
+    <div class="board box"><span class="tab">Box 03</span><h3>Smash burger box</h3>
+      <p class="pick">Pick any 4 smash burgers from the menu.</p>
       <ul><li><b>4</b>Smash burgers</li><li><b>4</b>Fries</li><li><b>4</b>Mozzarella sticks</li><li><b>4</b>Onion rings</li><li><b>4</b>V Cola</li></ul>
-      <div class="foot"><small>After discount</small><span class="big">1,200 <span>EGP</span></span></div></div>
-    <div class="board box"><span class="tab">Box 02</span><h3>Fried chicken box</h3>
-      <ul><li><b>4</b>Fried chicken</li><li><b>4</b>Fries</li><li><b>4</b>Mozzarella sticks</li><li><b>4</b>Onion rings</li><li><b>4</b>V Cola</li></ul>
-      <div class="foot"><small>After discount</small><span class="big">1,100 <span>EGP</span></span></div></div>
-    <div class="board box"><span class="tab">Box 03</span><h3>The mix box</h3>
-      <ul><li><b>2</b>Smash burgers</li><li><b>2</b>Fried chicken</li><li><b>4</b>Fries</li><li><b>4</b>Mozzarella sticks</li><li><b>4</b>Onion rings</li><li><b>4</b>V Cola</li></ul>
-      <div class="foot"><small>After discount</small><span class="big">1,150 <span>EGP</span></span></div></div>
+      <div class="foot"><small>After discount</small><span class="big">1,199 <span>EGP</span></span></div></div>
   </div>
 </section>
 
@@ -229,19 +251,21 @@ footer small{display:block;color:var(--muted);margin-top:24px}
 </section>
 
 <section id="branches">
-  <div class="sec-head"><h2>Find us</h2><p>Call to order or come by.</p></div>
+  <div class="sec-head"><h2>Find us</h2><p>Call, WhatsApp or come by.</p></div>
   <div class="branches">
     <div class="board branch"><span class="tab">Sheikh Zayed</span><h3>Majarra Mall</h3><p class="where">Sheikh Zayed City</p>
       <div class="phone"><span>01091616185</span><button class="copy" id="c1" data-n="01091616185">Copy</button></div>
-      <div class="phone"><span>01091616815</span><button class="copy" id="c2" data-n="01091616815">Copy</button></div></div>
-    <div class="board branch"><span class="tab">Nasr City</span><h3>Nasr City</h3><p class="where">Cairo</p>
-      <div class="phone"><span>01091616237</span><button class="copy" id="c3" data-n="01091616237">Copy</button></div></div>
+      <div class="phone"><span>01091616815</span><button class="copy" id="c2" data-n="01091616815">Copy</button></div>
+      <a class="btn wa" href="https://wa.me/201091616815" target="_blank" rel="noopener">WhatsApp Sheikh Zayed</a></div>
+    <div class="board branch"><span class="tab">Nasr City</span><h3>The Garden</h3><p class="where">Nasr City, Cairo</p>
+      <div class="phone"><span>01091616237</span><button class="copy" id="c3" data-n="01091616237">Copy</button></div>
+      <a class="btn wa" href="https://wa.me/201091616237" target="_blank" rel="noopener">WhatsApp Nasr City</a></div>
   </div>
 </section>
 </main>
 
 <footer class="wrap">
-  <div class="t">Flavors that defy <span>labels</span></div>
+  <div class="t">Flavors that defy <span>logic</span></div>
   <div class="links"><a class="btn" href="https://hankology.instakit.app/web" target="_blank" rel="noopener">Order online</a><a class="btn ghost" href="https://www.instagram.com/hankology_eg/" target="_blank" rel="noopener">Instagram</a></div>
   <small>© Hankology · A blend you can't label</small>
 </footer>
